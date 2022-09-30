@@ -7,24 +7,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "maybay")
-
+@Table(name ="maybay")
 public class MayBay {
     @Id
+    @Column(name = "mamb")
     @GeneratedValue
-    private int maMB;
+    private Long mamb;
 
     private String loai;
 
-
-    private int tamBay;
-
-
+    private int tambay;
+    @ManyToMany
+    @JoinTable(name = "chungnhan",joinColumns = {@JoinColumn(name = "mamb")}, inverseJoinColumns = {@JoinColumn(name = "manv")})
+    private List<NhanVien> listNhanVien;
 
 }
