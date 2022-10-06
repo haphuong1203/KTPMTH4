@@ -1,31 +1,28 @@
 package com.example.ktpmth4.entity;
 
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Table(name ="maybay")
-public class MayBay {
+@Setter
+@Getter
+@Table(name = "maybay")
+public class MayBay implements Serializable {
     @Id
     @Column(name = "mamb")
-    @GeneratedValue
-    private Long mamb;
+    public int maMB;
 
-    private String loai;
+    @Column(name = "loai")
+    public String loai;
 
-    private int tambay;
-    @ManyToMany
-    @JoinTable(name = "chungnhan",joinColumns = {@JoinColumn(name = "mamb")}, inverseJoinColumns = {@JoinColumn(name = "manv")})
-    private List<NhanVien> listNhanVien;
-
+    @Column(name = "tambay", updatable = false)
+    public int tamBay;
 }

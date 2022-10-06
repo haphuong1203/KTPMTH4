@@ -1,37 +1,36 @@
 package com.example.ktpmth4.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.*;
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.sql.Time;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-
-@Table(name ="chuyenbay")
-public class ChuyenBay {
-
-
+@Table(name = "chuyenbay")
+public class ChuyenBay implements Serializable {
     @Id
-    @Column(name = "macb")
-    @GeneratedValue
-    private String macb;
+    @Column(name = "maCB")
+    public String maCB;
+    @Column(name = "gadi")
+    public String gaDi;
+    @Column(name = "gaden")
+    public String gaDen;
+    @Column(name = "dodai")
+    public int doDai;
+    @Column(name = "giodi")
+    public Time gioDi;
+    @Column(name = "gioden")
+    public Time gioDen;
+    @Column(name = "chiphi")
+    public int chiPhi;
 
-    private String gaDi;
-    private String gaDen;
-    private int doDai;
-    @CreatedDate
-    private Date gioDen;
-
-    @CreatedDate
-    private Date gioDi;
-
-    private int chiPhi;
 }

@@ -1,35 +1,28 @@
 package com.example.ktpmth4.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Setter
+@Getter
 @Table(name = "nhanvien")
-public class NhanVien {
+public class NhanVien implements Serializable {
     @Id
-    @GeneratedValue
-    private long manv;
+    @Column(name = "manv")
+    public String maNV;
 
+    @Column(name = "ten")
+    public String ten;
 
-    private  String ten;
-
-    private int luong;
-
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH)
-    @JoinTable(name ="ChungNhan", joinColumns = {@JoinColumn(name = "maNV")}, inverseJoinColumns = {@JoinColumn(name = "maMB")})
-    private Set<MayBay> listMayBay = new HashSet<>();
-
-
-
-
+    @Column(name = "luong")
+    public int luong;
 }
