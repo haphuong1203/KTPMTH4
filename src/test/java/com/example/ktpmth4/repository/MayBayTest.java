@@ -18,5 +18,9 @@ public class MayBayTest {
         System.out.println("Có " + mayBayRepository.findLoaiMayBay() + " máy bay Boeing");
     }
 
+    @Test
+    void cau11(){
+        System.out.println(mayBayRepository.getMaByTenNV("Nguyen%"));
+    }
 
 }
