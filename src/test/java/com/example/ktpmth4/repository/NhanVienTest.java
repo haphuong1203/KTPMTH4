@@ -11,7 +11,7 @@ public class NhanVienTest {
     @Test
     void cau3(){
         System.out.println(nhanVienRepository.findNhanVienByLuong());
-        
+
     }
     @Test
     void cau8(){
