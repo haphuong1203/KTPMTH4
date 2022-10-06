@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ChuyenBayRepositoryTests {
+public class ChuyenBayTest {
     @Autowired
     ChuyenBayRepository chuyenBayRepository;
     @Test

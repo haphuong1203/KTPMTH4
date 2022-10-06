@@ -5,12 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class NhanVienRepositoryTests {
+public class NhanVienTest {
     @Autowired
     private NhanVienRepository nhanVienRepository;
     @Test
     void cau3(){
         System.out.println(nhanVienRepository.findNhanVienByLuong());
+        
     }
     @Test
     void cau8(){
