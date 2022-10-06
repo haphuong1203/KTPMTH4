@@ -30,7 +30,7 @@ public class NhanVienTest {
         System.out.println(nhanVienRepository.getMaByLoaiMB());
     }
 
-   
+
 
 
 }
