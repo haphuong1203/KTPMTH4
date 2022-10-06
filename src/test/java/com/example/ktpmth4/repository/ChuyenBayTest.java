@@ -23,23 +23,5 @@ public class ChuyenBayTest {
         System.out.println(chuyenBayRepository.findChuyenBayByGaDiVaGaDen());
     }
 
-    @Test
-    void cau6(){
-        System.out.println("Có " + chuyenBayRepository.findChuyenBayByGaDi() + " chuyến bay xuất phát từ Sài Gòn");
-    }
-
-    @Test
-    void cau14(){
-        System.out.print(chuyenBayRepository.findChuyenBayByMayBayAirbusA320());
-    }
-
-    @Test
-    void cau20(){
-        System.out.print(chuyenBayRepository.findChuyenBayKhoiHanhTruoc12h());
-    }
-
-    @Test
-    void cau21(){
-        System.out.print(chuyenBayRepository.demChuyenBayKhoiHanhTruoc12h());
-    }
+   
 }
