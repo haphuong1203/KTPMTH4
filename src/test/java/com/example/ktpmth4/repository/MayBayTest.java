@@ -22,5 +22,10 @@ public class MayBayTest {
     void cau11(){
         System.out.println(mayBayRepository.getMaByTenNV("Nguyen%"));
     }
+    @Test
+    void cau13(){
+        System.out.println(mayBayRepository.loaiMayBayChuyenVN280());
+    }
 
+   
 }
