@@ -8,34 +8,37 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class NhanVienTest {
     @Autowired
     private NhanVienRepository nhanVienRepository;
+
     @Test
-    void cau3(){
+    void cau3() {
         System.out.println(nhanVienRepository.findNhanVienByLuong());
 
     }
+
     @Test
-    void cau8(){
+    void cau8() {
         System.out.println("Tổng lương phải trả cho nhân viên: " + nhanVienRepository.tinhTongLuong());
     }
+
     @Test
-    void cau9(){
+    void cau9() {
         System.out.println(nhanVienRepository.getMaByLoaiMayBay());
     }
+
     @Test
-    void cau10(){
+    void cau10() {
         System.out.println(nhanVienRepository.findNhanVienByMaMB(747));
     }
+
     @Test
-    void cau12(){
+    void cau12() {
         System.out.println(nhanVienRepository.getMaByLoaiMB());
     }
 
     @Test
-    void cau15(){
+    void cau15() {
         System.out.println(nhanVienRepository.findTenNhanVienLaiBoeing());
     }
-
-
 
 
 }

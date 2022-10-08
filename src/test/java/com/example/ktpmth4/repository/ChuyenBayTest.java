@@ -8,8 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ChuyenBayTest {
     @Autowired
     ChuyenBayRepository chuyenBayRepository;
+
     @Test
-    void cau1(){
+    void cau1() {
         System.out.println(chuyenBayRepository.findChuyenBayByGaDen("DAD"));
     }
 
@@ -19,18 +20,25 @@ public class ChuyenBayTest {
     }
 
     @Test
-    void cau5(){
+    void cau5() {
         System.out.println(chuyenBayRepository.findChuyenBayByGaDiVaGaDen());
     }
 
     @Test
-    void cau6(){
+    void cau6() {
         System.out.println("Có " + chuyenBayRepository.findChuyenBayByGaDi() + " chuyến bay xuất phát từ Sài Gòn");
     }
+
     @Test
-    void cau14(){
+    void cau14() {
         System.out.print(chuyenBayRepository.findChuyenBayByMayBayAirbusA320());
     }
+
+    @Test
+    void cau20() {
+        System.out.print(chuyenBayRepository.findChuyenBayKhoiHanhTruoc12h());
+    }
+
 
 
 }

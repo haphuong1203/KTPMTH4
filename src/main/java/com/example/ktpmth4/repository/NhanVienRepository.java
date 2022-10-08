@@ -8,8 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface NhanVienRepository extends JpaRepository<NhanVien, String> {
-   @Query("select nv from NhanVien nv where nv.luong < 10000")
+    @Query("select nv from NhanVien nv where nv.luong < 10000")
     List<NhanVien> findNhanVienByLuong();
+
     @Query("select Sum(nv.luong) from NhanVien nv")
     int tinhTongLuong();
 
@@ -32,9 +33,10 @@ public interface NhanVienRepository extends JpaRepository<NhanVien, String> {
             "where nv.maNV in (select cn.MaNV from ChungNhan cn, MayBay mb " +
             "where cn.MaMB = mb.maMB and mb.loai like 'Boeing%')", nativeQuery = true)
     List<String> findTenNhanVienLaiBoeing();
+
     @Query(value = "select nv.maNV from NhanVien nv " +
-           "where nv.maNV in (select cn.MaNV from ChungNhan cn " +
-           "group by cn.MaNV " +
-           "having count(cn.maMB) >= 3)", nativeQuery = true)
+            "where nv.maNV in (select cn.MaNV from ChungNhan cn " +
+            "group by cn.MaNV " +
+            "having count(cn.maMB) >= 3)", nativeQuery = true)
     List<String> findMaPhiCongLai3LoaiMayBay();
 }
